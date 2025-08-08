@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nestjs-app
+  labels:
+    app: nestjs-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nestjs-app
+  template:
+    metadata:
+      labels:
+        app: nestjs-app
+    spec:
+      containers:
+        - name: nestjs-app
+          image: manyok007/devops-test:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REDIS_HOST
+              value: "redis"
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret
+                  key: redis-password
+            - name: APP_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: nestjs-config
+                  key: APP_ENV
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          securityContext:
+            runAsUser: 1000
+            runAsNonRoot: true
