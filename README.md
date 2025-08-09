@@ -28,7 +28,7 @@
 - `SSH_PRIVATE_KEY` — приватний SSH ключ для доступу до сервера.
 - `KUBE_CONFIG_DATA` — kubeconfig файл закодований у base64 для доступу до Kubernetes кластера.
 
-3.Запуск pipeline
+3. Запуск pipeline
 
 Коли ви пушите зміни в гілку `main`, автоматично запускається GitHub Actions workflow `CI/CD Pipeline`.
 Workflow виконує:
@@ -37,8 +37,9 @@ Workflow виконує:
 - **Запуск юніт-тестів** через `npm test`.
 - **Пуш Docker образу** до Docker Hub.
 - **Деплой** Kubernetes манифестів через Bash-скрипт, який застосовує Deployment, Service, Ingress, Secret, Config.
+Зауваження: для нормальної роботи Githab Actions з локальним сервером потрібно поставити actions-runner.
 
-4.Підключення через браузер
+4. Підключення через браузер
 
 Можна доступитись по IP-node:30080 а до redis по IP-node:30080/redis
 
@@ -56,3 +57,19 @@ Workflow виконує:
 
 ### 5. ConfigMap (`kuber/conf-nest.yml`)
 
+## Моніторинг
+
+### Кроки:
+
+1. Клонуйте репозиторій:
+
+   ```bash
+   git clone https://github.com/Fanfarium/moni.git
+   cd moni
+
+2. Запустіть скрипт:
+
+   ```bash
+   bash prom_stack.sh
+
+Створяться поди Prometheus, Grafana, AlertManager, Node Exporter та kube-state-metrics. 
