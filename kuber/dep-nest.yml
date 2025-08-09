@@ -28,7 +28,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: redis-secret
-                  key: redis-password
+                  key: REDIS_PASSWORD
             - name: APP_ENV
               valueFrom:
                 configMapKeyRef:
