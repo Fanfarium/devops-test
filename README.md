@@ -40,7 +40,7 @@ Workflow виконує:
 
 4.Підключення через браузер
 
-Можна доступитись по <IP-node>:30080 а до redis по <IP-node>:30080/redis
+Можна доступитись по IP-node:30080 а до redis по IP-node:30080/redis
 
 ## Kubernetes маніфести
 
