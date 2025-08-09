@@ -57,5 +57,3 @@ jobs:
       - name: Deploy manifests
         run: bash ./kuber/kube.sh
 
-      - name: Deploy monitoring
-        run: bash ./moni/prom_stack.sh
