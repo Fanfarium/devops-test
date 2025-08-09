@@ -39,7 +39,7 @@ Workflow виконує:
 - **Деплой** Kubernetes манифестів через Bash-скрипт, який застосовує Deployment, Service, Ingress, Secret, Config.
 Зауваження: для нормальної роботи Githab Actions з локальним сервером потрібно поставити actions-runner.
 
-![Github Actions](photo/Github_Actions.png)
+![GA](photo/GA.png)
 
 4. Підключення через браузер
 
