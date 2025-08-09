@@ -5,9 +5,10 @@ metadata:
   labels:
     app: nestjs-app
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: nestjs-app
   ports:
     - port: 3000
       targetPort: 3000
+      nodePort: 30000
