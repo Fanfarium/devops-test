@@ -15,6 +15,23 @@ jobs:
         with:
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint (Linting)
+        run: npm run lint
+
+      - name: Run tests
+        run: npm run test -- --ci --reporter=jest-junit
+
+      - name: Run npm audit
+        run: npm audit --audit-level=moderate
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
