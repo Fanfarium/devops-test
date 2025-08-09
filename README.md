@@ -39,9 +39,14 @@ Workflow виконує:
 - **Деплой** Kubernetes манифестів через Bash-скрипт, який застосовує Deployment, Service, Ingress, Secret, Config.
 Зауваження: для нормальної роботи Githab Actions з локальним сервером потрібно поставити actions-runner.
 
+![Github Actions](photo/Github_Actions.png)
+
 4. Підключення через браузер
 
 Можна доступитись по IP-node:30080 а до redis по IP-node:30080/redis
+
+![Nest](photo/nest.png)
+![redis](photo/redis.png)
 
 ## Kubernetes маніфести
 
@@ -73,3 +78,10 @@ Workflow виконує:
    bash prom_stack.sh
 
 Створяться поди Prometheus, Grafana, AlertManager, Node Exporter та kube-state-metrics. 
+Порти:
+- **Grafana**: 32000
+- **Prometheus**: 30001
+- **AlertManager**: 31000
+
+
+![Grafana](photo/Grafana.png)
