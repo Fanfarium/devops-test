@@ -37,6 +37,7 @@ Workflow виконує:
 - **Запуск юніт-тестів** через `npm test`.
 - **Пуш Docker образу** до Docker Hub.
 - **Деплой** Kubernetes манифестів через Bash-скрипт, який застосовує Deployment, Service, Ingress, Secret, Config.
+
 Зауваження: для нормальної роботи Githab Actions з локальним сервером потрібно поставити actions-runner.
 
 ![GA](photo/GA.png)
