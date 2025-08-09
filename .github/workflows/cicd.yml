@@ -43,6 +43,7 @@ jobs:
         with:
           push: true
           tags: manyok007/devops-test:latest
+          no-submodules: true
 
       - name: Set up kubectl
         uses: azure/setup-kubectl@v3
